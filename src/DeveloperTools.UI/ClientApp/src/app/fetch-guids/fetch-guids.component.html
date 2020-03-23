@@ -4,5 +4,25 @@
 
 <p *ngIf="!guids"><em>Generating...</em></p>
 
-<button class="btn btn-primary" style="width:200px; margin: 5px;" (click)="copyClicked($event);" *ngFor="let g of guids">{{ g }}</button>
+<div *ngIf="guids" class="box-shadow">
+  <button class="btn btn-primary" style="width:200px; margin: 5px;" (click)="copyAll();">📋 Copy all</button>
+  <button class="btn btn-warning" style="width:200px; margin: 5px;" (click)="regenerate();">🗘 Regenerate</button>
+  <ngb-tabset [destroyOnHide]="false">
 
+    <ngb-tab title="Individual GUIDs">
+      <ng-template ngbTabContent>
+        <button class="btn btn-light" style="width:200px; margin: 5px;" (click)="copyClicked($event.currentTarget);" *ngFor="let g of guids">{{ g }}</button>
+      </ng-template>
+    </ngb-tab>
+
+    <ngb-tab title="Mass GUIDs">
+      <ng-template ngbTabContent>
+        <div class="input-group">
+          <textarea class="form-control" rows="20" aria-label="With textarea" id="massGuids">{{ guidsSemicolonSeparated }}</textarea>
+        </div>
+      </ng-template>
+    </ngb-tab>
+
+  </ngb-tabset>
+
+</div>
