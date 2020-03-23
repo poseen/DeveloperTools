@@ -1,6 +1,6 @@
 <h1 id="tableLabel">Fetch GUIDs</h1>
 
-<p>This tool generates GUIDs. Click on a GUID to copy it to clipboard.</p>
+<p>This tool generates GUIDs.</p>
 
 <p *ngIf="!guids"><em>Generating...</em></p>
 
@@ -11,15 +11,15 @@
 
     <ngb-tab title="Individual GUIDs">
       <ng-template ngbTabContent>
+        <br />
+        <p style="margin:5px 10px 10px 10px">Click on a GUID to copy it to clipboard.</p>
         <button class="btn btn-light" style="width:200px; margin: 5px;" (click)="copyClicked($event.currentTarget);" *ngFor="let g of guids">{{ g }}</button>
       </ng-template>
     </ngb-tab>
 
     <ngb-tab title="Mass GUIDs">
       <ng-template ngbTabContent>
-        <div class="input-group">
-          <textarea class="form-control" rows="20" aria-label="With textarea" id="massGuids">{{ guidsSemicolonSeparated }}</textarea>
-        </div>
+        <pre id="massGuids"><code>{{ guidsSemicolonSeparated }}</code></pre>
       </ng-template>
     </ngb-tab>
 
