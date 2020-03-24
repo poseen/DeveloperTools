@@ -4,10 +4,6 @@ FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
-# BEGIN MODIFICATION - Node is needed for development (but not production)
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
-RUN apt-get install --assume-yes nodejs
-# END MODIFICATION
 
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1-buster AS build
 WORKDIR /src
