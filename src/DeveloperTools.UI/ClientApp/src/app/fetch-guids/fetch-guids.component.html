@@ -6,7 +6,8 @@
 
 <div *ngIf="guids" class="box-shadow">
   <button class="btn btn-primary" style="width:200px; margin: 5px;" (click)="copyAll();">📋 Copy all</button>
-  <button class="btn btn-warning" style="width:200px; margin: 5px;" (click)="regenerate();">🗘 Regenerate</button>
+  <button class="btn btn-warning" style="width:200px; margin: 5px;" (click)="regenerate();">🗘 Regenerate</button><br />
+  <label for="numberOfGuidsToGenerateInputField" style="margin:5px;">Number of GUIDs to generate</label><input id="numberOfGuidsToGenerateInputField" style="margin:5px;" type="number" min="1" max="10000" [value]="numberOfGuidsToGenerate" (input)="numberOfGuidsToGenerate = $event.target.value" />
   <ngb-tabset [destroyOnHide]="false">
 
     <ngb-tab title="Individual GUIDs">
