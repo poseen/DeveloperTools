@@ -2,6 +2,10 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
+    "iis": {
+      "applicationUrl": "http://localhost/DeveloperTools.UI",
+      "sslPort": 0
+    },
     "iisExpress": {
       "applicationUrl": "http://localhost:51713",
       "sslPort": 44381
@@ -16,7 +20,7 @@
       }
     },
     "DeveloperTools.UI": {
-      "commandName": "Project",
+      "commandName": "Docker",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
@@ -29,6 +33,10 @@
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
       "publishAllPorts": true,
       "useSSL": true
+    },
+    "Azure Dev Spaces": {
+      "commandName": "AzureDevSpaces",
+      "launchBrowser": true
     }
   }
 }
